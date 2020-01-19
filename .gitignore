@@ -5,3 +5,4 @@ terraform.tfvars
 .terraform.tfstate.lock.info
 .env
 .vscode
+.state
