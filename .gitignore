@@ -1,0 +1,7 @@
+.DS_Store
+.terraform
+terraform.tfvars
+*.log
+.terraform.tfstate.lock.info
+.env
+.vscode
