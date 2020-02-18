@@ -11,8 +11,8 @@ variable "postgres_password" {}
 
 provider "mysql" {
   endpoint = "${var.mysql_host}:${var.mysql_port}"
-  username = "${var.mysql_username}"
-  password = "${var.mysql_password}"
+  username = var.mysql_username
+  password = var.mysql_password
 }
 
 provider "postgresql" {
