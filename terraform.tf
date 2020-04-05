@@ -137,3 +137,36 @@ resource "mysql_grant" "cestyzmenycz_new" {
   privileges = ["ALL PRIVILEGES"]
 }
 
+resource "mysql_user" "srpocz2" {
+  user = "srpocz2"
+  host = "%"
+  plaintext_password = "srposrpoo"
+}
+
+resource "mysql_database" "srpocz2" {
+  name = "srpocz2"
+}
+
+resource "mysql_grant" "srpocz2" {
+  user = "${mysql_user.srpocz2.user}"
+  host = "%"
+  database = "${mysql_database.srpocz2.name}"
+  privileges = ["ALL PRIVILEGES"]
+}
+
+resource "mysql_user" "srpocz3" {
+  user = "srpocz3"
+  host = "%"
+  plaintext_password = "srposrpoo99"
+}
+
+resource "mysql_database" "srpocz3" {
+  name = "srpocz3"
+}
+
+resource "mysql_grant" "srpocz3" {
+  user = "${mysql_user.srpocz3.user}"
+  host = "%"
+  database = "${mysql_database.srpocz3.name}"
+  privileges = ["ALL PRIVILEGES"]
+}
