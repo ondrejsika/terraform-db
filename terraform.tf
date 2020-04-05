@@ -27,7 +27,7 @@ provider "postgresql" {
 resource "mysql_user" "chatahurkycz" {
   user = "chatahurkycz"
   host = "%"
-  plaintext_password = "hroznesuperpes2019"
+  plaintext_password = "halucinogenizaba22"
 }
 
 resource "mysql_database" "chatahurkycz" {
