@@ -103,3 +103,37 @@ resource "postgresql_database" "democloud_demo" {
   allow_connections = true
 }
 
+resource "mysql_user" "cestyzmenycz_old" {
+  user = "cestyzmenycz_old"
+  host = "%"
+  plaintext_password = "cestynekam33"
+}
+
+resource "mysql_database" "cestyzmenycz_old" {
+  name = "cestyzmenycz_old"
+}
+
+resource "mysql_grant" "cestyzmenycz_old" {
+  user = "${mysql_user.cestyzmenycz_old.user}"
+  host = "%"
+  database = "${mysql_database.cestyzmenycz_old.name}"
+  privileges = ["ALL PRIVILEGES"]
+}
+
+resource "mysql_user" "cestyzmenycz_new" {
+  user = "cestyzmenycz_new"
+  host = "%"
+  plaintext_password = "cestynekam44"
+}
+
+resource "mysql_database" "cestyzmenycz_new" {
+  name = "cestyzmenycz_new"
+}
+
+resource "mysql_grant" "cestyzmenycz_new" {
+  user = "${mysql_user.cestyzmenycz_new.user}"
+  host = "%"
+  database = "${mysql_database.cestyzmenycz_new.name}"
+  privileges = ["ALL PRIVILEGES"]
+}
+
