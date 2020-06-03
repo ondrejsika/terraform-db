@@ -170,3 +170,10 @@ resource "mysql_grant" "srpocz3" {
   database = "${mysql_database.srpocz3.name}"
   privileges = ["ALL PRIVILEGES"]
 }
+
+module "mysql_demo" {
+  source  = "ondrejsika/mysql-db-with-user/module"
+  version = "1.0.0"
+  db = "demo"
+  password = "demo"
+}
