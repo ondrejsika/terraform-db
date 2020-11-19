@@ -1,41 +1,10 @@
-variable "mysql_host" {}
-variable "mysql_port" {}
-variable "mysql_username" {}
-variable "mysql_password" {}
-
-variable "postgres_host" {}
-variable "postgres_port" {}
-variable "postgres_username" {}
-variable "postgres_password" {}
-
-
-provider "mysql" {
-  endpoint = "${var.mysql_host}:${var.mysql_port}"
-  username = var.mysql_username
-  password = var.mysql_password
-}
-
-provider "postgresql" {
-  host     = var.postgres_host
-  port     = var.postgres_port
-  username = var.postgres_username
-  password = var.postgres_password
-  sslmode  = "disable"
-}
-
-module "chatahurkycz" {
-  source   = "ondrejsika/mysql-db-with-user/module"
-  version  = "1.1.0"
-  db       = "chatahurkycz"
-  password = "halucinogenizaba22"
-}
+# BEGIN trainingcrm.sika.io
 
 resource "postgresql_role" "trainingcrm_sika_io" {
   name     = "trainingcrm_sika_io"
   login    = true
   password = "pisusisvojecrmvole"
 }
-
 
 resource "postgresql_database" "trainingcrm_sika_io" {
   name              = "trainingcrm_sika_io"
@@ -47,12 +16,15 @@ resource "postgresql_database" "trainingcrm_sika_io" {
   allow_connections = true
 }
 
+# END trainingcrm.sika.io
+
+# BEGIN trainingcrm-demo.sika.io
+
 resource "postgresql_role" "trainingcrm_demo_sika_io" {
   name     = "trainingcrm_demo_sika_io"
   login    = true
   password = "pisusisvojecrmvole"
 }
-
 
 resource "postgresql_database" "trainingcrm_demo_sika_io" {
   name              = "trainingcrm_demo_sika_io"
@@ -64,13 +36,15 @@ resource "postgresql_database" "trainingcrm_demo_sika_io" {
   allow_connections = true
 }
 
+# END trainingcrm-demo.sika.io
+
+# BEGIN democloud
 
 resource "postgresql_role" "democloud" {
   name     = "democloud"
   login    = true
   password = "democlouddemo"
 }
-
 
 resource "postgresql_database" "democloud" {
   name              = "democloud"
@@ -82,6 +56,10 @@ resource "postgresql_database" "democloud" {
   allow_connections = true
 }
 
+# END democloud
+
+# BEGIN democloud_demo
+
 resource "postgresql_database" "democloud_demo" {
   name              = "democloud_demo"
   owner             = postgresql_role.democloud.name
@@ -92,33 +70,7 @@ resource "postgresql_database" "democloud_demo" {
   allow_connections = true
 }
 
-module "cestyzmenycz_old" {
-  source   = "ondrejsika/mysql-db-with-user/module"
-  version  = "1.1.0"
-  db       = "cestyzmenycz_old"
-  password = "cestynekam33"
-}
-
-module "cestyzmenycz_new" {
-  source   = "ondrejsika/mysql-db-with-user/module"
-  version  = "1.1.0"
-  db       = "cestyzmenycz_new"
-  password = "cestynekam44"
-}
-
-module "srpocz2" {
-  source   = "ondrejsika/mysql-db-with-user/module"
-  version  = "1.1.0"
-  db       = "srpocz2"
-  password = "srposrpoo"
-}
-
-module "srpocz3" {
-  source   = "ondrejsika/mysql-db-with-user/module"
-  version  = "1.1.0"
-  db       = "srpocz3"
-  password = "srposrpoo99"
-}
+# END democloud_demo
 
 # BEGIN stream.sika.io
 
