@@ -171,14 +171,6 @@ resource "mysql_grant" "srpocz3" {
   privileges = ["ALL PRIVILEGES"]
 }
 
-module "mysql_demo" {
-  source  = "ondrejsika/mysql-db-with-user/module"
-  version = "1.1.0"
-  db = "demo"
-  password = "demo"
-}
-
-
 # BEGIN stream.sika.io
 
 resource "postgresql_role" "stream_sika_io" {
