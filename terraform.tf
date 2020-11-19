@@ -177,3 +177,44 @@ module "mysql_demo" {
   db = "demo"
   password = "demo"
 }
+
+
+# BEGIN stream.sika.io
+
+resource "postgresql_role" "stream_sika_io" {
+  name     = "stream_sika_io"
+  login    = true
+  password = "devopslive2030"
+}
+
+resource "postgresql_database" "stream_sika_io" {
+  name              = "stream_sika_io"
+  owner             = postgresql_role.stream_sika_io.name
+  template          = "template0"
+  lc_collate        = "en_US.utf8"
+  lc_ctype          = "en_US.utf8"
+  connection_limit  = -1
+  allow_connections = true
+}
+
+# END stream.sika.io
+
+# BEGIN test-stream.sika.io
+
+resource "postgresql_role" "test_stream_sika_io" {
+  name     = "test_stream_sika_io"
+  login    = true
+  password = "devopslive2020"
+}
+
+resource "postgresql_database" "test_stream_sika_io" {
+  name              = "test_stream_sika_io"
+  owner             = postgresql_role.stream_sika_io.name
+  template          = "template0"
+  lc_collate        = "en_US.utf8"
+  lc_ctype          = "en_US.utf8"
+  connection_limit  = -1
+  allow_connections = true
+}
+
+# END test-stream.sika.io
