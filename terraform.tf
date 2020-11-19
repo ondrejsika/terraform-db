@@ -173,7 +173,7 @@ resource "mysql_grant" "srpocz3" {
 
 module "mysql_demo" {
   source  = "ondrejsika/mysql-db-with-user/module"
-  version = "1.0.0"
+  version = "1.1.0"
   db = "demo"
   password = "demo"
 }
