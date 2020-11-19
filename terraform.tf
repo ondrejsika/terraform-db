@@ -25,8 +25,8 @@ provider "postgresql" {
 
 
 resource "mysql_user" "chatahurkycz" {
-  user = "chatahurkycz"
-  host = "%"
+  user               = "chatahurkycz"
+  host               = "%"
   plaintext_password = "halucinogenizaba22"
 }
 
@@ -35,9 +35,9 @@ resource "mysql_database" "chatahurkycz" {
 }
 
 resource "mysql_grant" "chatahurkycz" {
-  user = "${mysql_user.chatahurkycz.user}"
-  host = "%"
-  database = "${mysql_database.chatahurkycz.name}"
+  user       = "${mysql_user.chatahurkycz.user}"
+  host       = "%"
+  database   = "${mysql_database.chatahurkycz.name}"
   privileges = ["ALL PRIVILEGES"]
 }
 
@@ -104,8 +104,8 @@ resource "postgresql_database" "democloud_demo" {
 }
 
 resource "mysql_user" "cestyzmenycz_old" {
-  user = "cestyzmenycz_old"
-  host = "%"
+  user               = "cestyzmenycz_old"
+  host               = "%"
   plaintext_password = "cestynekam33"
 }
 
@@ -114,15 +114,15 @@ resource "mysql_database" "cestyzmenycz_old" {
 }
 
 resource "mysql_grant" "cestyzmenycz_old" {
-  user = "${mysql_user.cestyzmenycz_old.user}"
-  host = "%"
-  database = "${mysql_database.cestyzmenycz_old.name}"
+  user       = "${mysql_user.cestyzmenycz_old.user}"
+  host       = "%"
+  database   = "${mysql_database.cestyzmenycz_old.name}"
   privileges = ["ALL PRIVILEGES"]
 }
 
 resource "mysql_user" "cestyzmenycz_new" {
-  user = "cestyzmenycz_new"
-  host = "%"
+  user               = "cestyzmenycz_new"
+  host               = "%"
   plaintext_password = "cestynekam44"
 }
 
@@ -131,15 +131,15 @@ resource "mysql_database" "cestyzmenycz_new" {
 }
 
 resource "mysql_grant" "cestyzmenycz_new" {
-  user = "${mysql_user.cestyzmenycz_new.user}"
-  host = "%"
-  database = "${mysql_database.cestyzmenycz_new.name}"
+  user       = "${mysql_user.cestyzmenycz_new.user}"
+  host       = "%"
+  database   = "${mysql_database.cestyzmenycz_new.name}"
   privileges = ["ALL PRIVILEGES"]
 }
 
 resource "mysql_user" "srpocz2" {
-  user = "srpocz2"
-  host = "%"
+  user               = "srpocz2"
+  host               = "%"
   plaintext_password = "srposrpoo"
 }
 
@@ -148,15 +148,15 @@ resource "mysql_database" "srpocz2" {
 }
 
 resource "mysql_grant" "srpocz2" {
-  user = "${mysql_user.srpocz2.user}"
-  host = "%"
-  database = "${mysql_database.srpocz2.name}"
+  user       = "${mysql_user.srpocz2.user}"
+  host       = "%"
+  database   = "${mysql_database.srpocz2.name}"
   privileges = ["ALL PRIVILEGES"]
 }
 
 resource "mysql_user" "srpocz3" {
-  user = "srpocz3"
-  host = "%"
+  user               = "srpocz3"
+  host               = "%"
   plaintext_password = "srposrpoo99"
 }
 
@@ -165,9 +165,9 @@ resource "mysql_database" "srpocz3" {
 }
 
 resource "mysql_grant" "srpocz3" {
-  user = "${mysql_user.srpocz3.user}"
-  host = "%"
-  database = "${mysql_database.srpocz3.name}"
+  user       = "${mysql_user.srpocz3.user}"
+  host       = "%"
+  database   = "${mysql_database.srpocz3.name}"
   privileges = ["ALL PRIVILEGES"]
 }
 
