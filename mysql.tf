@@ -32,3 +32,10 @@ module "srpocz3" {
   db       = "srpocz3"
   password = "srposrpoo99"
 }
+
+module "sedastrelacz" {
+  source   = "ondrejsika/mysql-db-with-user/module"
+  version  = "1.1.0"
+  db       = "sedastrelacz"
+  password = "ss53ss53ss53"
+}
