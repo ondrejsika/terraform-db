@@ -7,3 +7,5 @@ postgres_host     = "xxx"
 postgres_port     = "xxx"
 postgres_username = "xxx"
 postgres_password = "xxx"
+
+digitalocean_token = "xxx"

@@ -1,0 +1,25 @@
+resource "digitalocean_database_cluster" "prod-mysql" {
+  name       = "prod"
+  engine     = "mysql"
+  version    = "8"
+  size       = "db-s-1vcpu-1gb"
+  region     = "fra1"
+  node_count = 1
+}
+
+output "prod-mysql-user" {
+  value = digitalocean_database_cluster.prod-mysql.user
+}
+
+output "prod-mysql-password" {
+  value = digitalocean_database_cluster.prod-mysql.password
+  sensitive = true
+}
+
+output "prod-mysql-host" {
+  value = digitalocean_database_cluster.prod-mysql.host
+}
+
+output "prod-mysql-port" {
+  value = digitalocean_database_cluster.prod-mysql.port
+}

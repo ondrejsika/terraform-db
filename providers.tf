@@ -21,3 +21,9 @@ provider "postgresql" {
   password = var.postgres_password
   sslmode  = "disable"
 }
+
+variable "digitalocean_token" {}
+
+provider "digitalocean" {
+  token = var.digitalocean_token
+}

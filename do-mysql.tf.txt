@@ -1,0 +1,11 @@
+module "do-chatahurkycz" {
+  source   = "/Users/ondrej/Projects/terraform/modules/terraform-module-do-db-with-user"
+  // version  = "1.1.0"
+  cluster_id = digitalocean_database_cluster.prod-mysql.id
+  db       = "chatahurkycz"
+  // password = "halucinogenizaba22"
+}
+
+output "do-db-chatahurkycz" {
+  value = module.do-chatahurkycz.password
+}
