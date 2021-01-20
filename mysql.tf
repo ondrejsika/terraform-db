@@ -5,6 +5,13 @@ module "chatahurkycz" {
   password = "halucinogenizaba22"
 }
 
+module "pecihradekcz" {
+  source   = "ondrejsika/mysql-db-with-user/module"
+  version  = "1.1.0"
+  db       = "pecihradekcz"
+  password = "halucinogenizaba33"
+}
+
 module "cestyzmenycz_old" {
   source   = "ondrejsika/mysql-db-with-user/module"
   version  = "1.1.0"
